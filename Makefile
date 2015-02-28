@@ -5,19 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/02/28 10:04:22 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/02/28 12:28:21 by fmarmol          ###   ########.fr        #
+#    Created: 2015/02/28 14:54:35 by hlecuyer          #+#    #+#              #
+#    Updated: 2015/02/28 15:01:15 by hlecuyer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=game_2048
-VERSION=1.0.5
+VERSION=1.0.7
 CFLAGS=-Wall -Werror -Wextra -g
 INCLUDES=-I ./includes -I ./libft/includes
-LIBS=-L ./libft -l ft -lncurses -lmenu
+LIBS=-L ./libft -l ft -lncurses
 
-SRC=main.c \
+SRC=command.c \
+	game_logic.c \
+	init_grill.c \
 	init_ncurses.c \
+	main.c \
 
 OBJ=$(SRC:.c=.o)
 

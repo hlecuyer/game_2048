@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 13:06:00 by hlecuyer         ###   ########.fr       */
+/*   Updated: 2015/02/28 15:00:12 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ typedef struct		s_check_signal
 	int				tcols;
 }					t_check_signal;
 
-t_grid *        init_grid(t_env env, t_grid *grid);
-void            start_game(t_env env, t_grid *grid);
+t_grid *        init_grid(t_env *env, t_grid *grid);
+void            start_game(t_env *env, t_grid *grid);
 void			init_ncurses(t_env *env);
+void			leftkey(t_env * env, t_grid * grid);
+void			add_rand_num(t_env *env, t_grid *grid, int num);
 
 #endif
