@@ -6,7 +6,7 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 10:04:22 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/02/28 10:41:20 by fmarmol          ###   ########.fr        #
+#    Updated: 2015/02/28 12:28:21 by fmarmol          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ INCLUDES=-I ./includes -I ./libft/includes
 LIBS=-L ./libft -l ft -lncurses -lmenu
 
 SRC=main.c \
+	init_ncurses.c \
 
 OBJ=$(SRC:.c=.o)
 
