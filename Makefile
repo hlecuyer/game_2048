@@ -6,7 +6,7 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 10:04:22 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/02/28 12:28:21 by fmarmol          ###   ########.fr        #
+#    Updated: 2015/02/28 13:44:17 by fmarmol          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ NAME=game_2048
 VERSION=1.0.5
 CFLAGS=-Wall -Werror -Wextra -g
 INCLUDES=-I ./includes -I ./libft/includes
-LIBS=-L ./libft -l ft -lncurses -lmenu
+LIBS=-L ./libft -l ft -lncurses
 
 SRC=main.c \
 	init_ncurses.c \
+	init_grid.c \
+	main_loop.c
 
 OBJ=$(SRC:.c=.o)
 

@@ -1,29 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_elems.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 13:44:54 by fmarmol          ###   ########.fr       */
+/*   Created: 2015/02/28 12:54:57 by fmarmol           #+#    #+#             */
+/*   Updated: 2015/02/28 13:08:13 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <game_2048.h>
 
-t_check_signal check_signal;
 
-int main()
-{
-	t_grid	grid;
-	t_env	env;
-
-	init_ncurses(&env);
-	init_grid(&env, &grid);
-	main_loop(&env, &grid);
-	endwin();
-	printf("term rows = %d, term cols = %d\n", env.trows, env.tcols);
-	return 0;
-}
