@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:39:16 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/02/28 16:03:07 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:38:23 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,19 @@ void main_loop(t_env *env, t_grid *grid)
 	int x;
 	int y;
 
-	while((ch=getch() != 27))
+	/*if (ch == KEY_LEFT)
+	{
+		mvaddch(0,0,'A');
+		refresh();
+	}*/
+	while((ch=getch()) != 27)
 	{
 		switch(ch)
 		{
 		case KEY_LEFT:
-			leftkey(env, grid);
+			//mvaddch(0,0,'A');
+			//refresh();
+			//leftkey(env, grid);
 			add_rand_num(env, grid, 0);
 			break;
 		case KEY_RIGHT:

@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 15:26:13 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/02/28 15:57:29 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/02/28 16:24:29 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ t_grid *		init_grid(t_env * env, t_grid *grid)
 	grid->free_spot = (int *)malloc(sizeof(int) * (env->ncols * env->nrows));
 	if (grid->free_spot == NULL)
 		return (NULL);
-	grid->grid[0][0].value=2;
+	//grid->grid[0][0].value=2;
+	start_game(env, grid);
 	//init_win(env, grid);
 	//refresh();
 	return (grid);
