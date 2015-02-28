@@ -103,10 +103,19 @@ void main_loop(t_env *env, t_grid *grid)
 			add_rand_num(env, grid, 0);
 			break;
 		case KEY_RIGHT:
+			right_shift(env,grid);
+			right_fusion(env,grid);	
+			add_rand_num(env, grid, 0);
 			break;
 		case KEY_UP:
+			top_shift(env,grid);
+			top_fusion(env,grid);
+			add_rand_num(env, grid, 0);
 			break;
 		case KEY_DOWN:
+			bottom_shift(env,grid);
+			bottom_fusion(env,grid);
+			add_rand_num(env, grid, 0);
 			break;
 		}
 		getmaxyx(env->win, y, x);

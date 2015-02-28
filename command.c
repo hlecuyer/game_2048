@@ -53,6 +53,89 @@ void		left_shift(t_env *env, t_grid *grid)
 	}
 }
 
+void		right_shift(t_env *env, t_grid *grid)
+{
+	int i;
+	int y;
+	int	x;
+
+	x = 0;
+	while (x < env->nrows)
+	{
+		i = env->ncols;
+		while (i != 0)
+		{
+			y = env->ncols-1;
+			while (y > 0)
+			{
+				if (grid->grid[x][y].value == 0)
+				{
+					grid->grid[x][y].value = grid->grid[x][y - 1].value;
+					grid->grid[x][y - 1].value = 0;
+				}
+				y--;
+			}
+			i--;
+		}
+		x++;
+	}
+}
+
+void		top_shift(t_env *env, t_grid *grid)
+{
+	int i;
+	int y;
+	int	x;
+
+	y = 0;
+	while (y < env->ncols)
+	{
+		i = env->nrows;
+		while (i != 0)
+		{
+			x = 0;
+			while (x < env->nrows-1)
+			{
+				if (grid->grid[x][y].value == 0)
+				{
+					grid->grid[x][y].value = grid->grid[x + 1][y].value;
+					grid->grid[x + 1][y].value = 0;
+				}
+				x++;
+			}
+			i--;
+		}
+		y++;
+	}
+}
+
+void		bottom_shift(t_env *env, t_grid *grid)
+{
+	int i;
+	int y;
+	int	x;
+
+	y = 0;
+	while (y < env->ncols)
+	{
+		i = env->nrows;
+		while (i != 0)
+		{
+			x = env->nrows - 1;
+			while (x > 0)
+			{
+				if (grid->grid[x][y].value == 0)
+				{
+					grid->grid[x][y].value = grid->grid[x - 1][y].value;
+					grid->grid[x - 1][y].value = 0;
+				}
+				x--;
+			}
+			i--;
+		}
+		y++;
+	}
+}
 // void		leftscreen(t_env *env, t_elem  *e)
 // {
 // 	int	i;
