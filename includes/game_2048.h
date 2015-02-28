@@ -16,6 +16,9 @@
 # include <ncurses.h>
 # include <menu.h>
 # include <stdlib.h>
+# include <libft.h>
+# include <signal.h>
+
 typedef struct		s_elem
 {
 	int		value;
@@ -39,16 +42,11 @@ typedef struct		s_env
 	WINDOW			*win;
 }					t_env;
 
-typedef struct		s_check_signal
-{
-	int				trows;
-	int				tcols;
-}					t_check_signal;
-
 t_grid *        init_grid(t_env *env, t_grid *grid);
 void            start_game(t_env *env, t_grid *grid);
 void			init_ncurses(t_env *env);
 void			leftkey(t_env * env, t_grid * grid);
 void			add_rand_num(t_env *env, t_grid *grid, int num);
+void			main_loop(t_env *env, t_grid *grid);
 
 #endif
