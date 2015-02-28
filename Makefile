@@ -6,7 +6,7 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 10:04:22 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/02/28 10:04:22 by hlecuyer         ###   ########.fr        #
+#    Updated: 2015/02/28 10:41:20 by fmarmol          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=game_2048
 VERSION=1.0.5
 CFLAGS=-Wall -Werror -Wextra -g
 INCLUDES=-I ./includes -I ./libft/includes
-LIBS=-L ./libft -l ft
+LIBS=-L ./libft -l ft -lncurses -lmenu
 
 SRC=main.c \
 
