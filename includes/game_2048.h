@@ -48,5 +48,6 @@ void			init_ncurses(t_env *env);
 void			leftkey(t_env * env, t_grid * grid);
 void			add_rand_num(t_env *env, t_grid *grid, int num);
 void			main_loop(t_env *env, t_grid *grid);
+void			left_shift(t_env *env, t_grid *grid);
 
 #endif
