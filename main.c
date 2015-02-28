@@ -15,9 +15,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <sys/stat.h> 
+#include <fcntl.h>
 
 int main()
 {
+	fd = open("./error_log",O_WRONLY|O_CREAT, 0666);
 	t_grid	grid;
 	t_env	env;
 	srand(time(0));

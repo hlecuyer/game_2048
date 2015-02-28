@@ -13,7 +13,6 @@
 #include "libft.h"
 #include "game_2048.h"
 
-
 void	check_empty_spot(t_env *env, t_grid *grid)
 {
 	int	i;
@@ -38,10 +37,10 @@ void	add_rand_num(t_env *env, t_grid *grid, int num)
 {
 	int pos;
 
-	if (grid->number_of_free_spot == 0)
-		return ;
 	pos = 0;
 	check_empty_spot(env, grid);
+	if (grid->number_of_free_spot == 0)
+		return ;
 	pos = rand() % grid->number_of_free_spot;
 	pos = grid->free_spot[pos];
 	if (!num)
