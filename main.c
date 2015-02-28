@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 10:30:50 by hlecuyer         ###   ########.fr       */
+/*   Updated: 2015/02/28 10:37:47 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int main()
 {
+	t_grill	grill;
+	t_env	env;
 
 	ft_putstr("Ok c'est cool\n");
 	return 0;
