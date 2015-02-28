@@ -20,6 +20,8 @@
 
 int main()
 {
+	int fd;
+
 	fd = open("./error_log",O_WRONLY|O_CREAT, 0666);
 	t_grid	grid;
 	t_env	env;

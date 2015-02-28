@@ -99,6 +99,7 @@ void main_loop(t_env *env, t_grid *grid)
 			//refresh();
 			//leftkey(env, grid);
 			left_shift(env, grid);
+			left_fusion(env,grid);	
 			add_rand_num(env, grid, 0);
 			break;
 		case KEY_RIGHT:

@@ -23,6 +23,7 @@ SRC=command.c \
 	init_ncurses.c \
 	main.c \
 	main_loop.c \
+	fusion.c
 
 OBJ=$(SRC:.c=.o)
 
