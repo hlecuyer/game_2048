@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 14:08:42 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/02/28 14:42:23 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <menu.h>
 # include <stdlib.h>
 # include <libft.h>
+# include <signal.h>
 
 typedef struct		s_elem
 {
@@ -43,7 +44,8 @@ typedef struct		s_env
 
 typedef struct		s_check_signal
 {
-	int				trows;
+	WINDOW			*win;
+	int 			trows;
 	int				tcols;
 }					t_check_signal;
 
