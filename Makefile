@@ -6,7 +6,7 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 16:12:12 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/03/01 12:37:17 by fmarmol          ###   ########.fr        #
+#    Updated: 2015/03/01 13:09:09 by fmarmol          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ SRC=command.c \
 	main.c \
 	main_loop.c \
 	fusion.c \
-	menu.c
+	menu.c \
+	check_win.c
+
 OBJ=$(SRC:.c=.o)
 
 all: build $(NAME) finish
