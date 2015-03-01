@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:39:16 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 11:40:59 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:53:18 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ void main_loop(t_env *env, t_grid *grid)
 			}
 			break;
 		}
-		ft_putendl_fd(ft_itoa(env->left_flag),fd);
-		ft_putendl_fd(ft_itoa(env->right_flag),fd);
-		ft_putendl_fd(ft_itoa(env->top_flag),fd);
-		ft_putendl_fd(ft_itoa(env->bottom_flag),fd);
-		ft_putendl_fd("",fd);
+		//ft_putendl_fd(ft_itoa(env->left_flag),fd);
+		//ft_putendl_fd(ft_itoa(env->right_flag),fd);
+		//ft_putendl_fd(ft_itoa(env->top_flag),fd);
+		//ft_putendl_fd(ft_itoa(env->bottom_flag),fd);
+		//ft_putendl_fd("",fd);
 		if (env->left_flag == 1 || env->right_flag == 1 || env->top_flag == 1 || env->bottom_flag == 1){
 			add_rand_num(env, grid, rand()%2);
 			env->left_flag = 0;

@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 11:02:17 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:59:30 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ int main()
 	t_env	env;
 	srand(time(0));
 	init_ncurses(&env);
-	init_grid(&env, &grid);
-	main_loop(&env, &grid);
+	if (menu(&env))
+	{
+		init_grid(&env, &grid);
+		main_loop(&env, &grid);
+	}
 	endwin();
 	return 0;
 }

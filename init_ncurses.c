@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 11:03:37 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 11:45:40 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:48:16 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ void init_ncurses(t_env * env)
 	x = LINES;
 	initscr();
 	init_colors();
-	timeout(100);
 	noecho();
 	nonl();
 	cbreak();
 	curs_set(0);
 	env->win = stdscr;
 	keypad(stdscr,true);
+	timeout(100);
+	//env->nrows=4;
+	//	env->ncols=4;
 	getmaxyx(stdscr, y, x);
 	env->trows=y;
 	env->tcols=x;
-	env->nrows=10;
-	env->ncols=10;
 	env->left_flag = 0;
 	env->right_flag = 0;
 	env->top_flag = 0;
