@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 11:03:37 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 14:56:52 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 14:58:28 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	init_colors(void)
 	init_pair(125, COLOR_BLACK, COLOR_BLUE);
 }
 
-void		init_ncurses(t_env * env)
+void		init_ncurses(t_env *env)
 {
 	int y;
 	int x;
@@ -39,11 +39,11 @@ void		init_ncurses(t_env * env)
 	cbreak();
 	curs_set(0);
 	env->win = stdscr;
-	keypad(stdscr,true);
+	keypad(stdscr, true);
 	timeout(100);
 	getmaxyx(stdscr, y, x);
-	env->trows=y;
-	env->tcols=x;
+	env->trows = y;
+	env->tcols = x;
 	env->left_flag = 0;
 	env->right_flag = 0;
 	env->top_flag = 0;

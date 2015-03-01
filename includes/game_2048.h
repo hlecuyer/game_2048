@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 14:04:34 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 15:01:11 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ typedef struct		s_env
 	int				bottom_flag;
 }					t_env;
 
-t_grid *			init_grid(t_env *env, t_grid *grid);
+t_grid				*init_grid(t_env *env, t_grid *grid);
 void				start_game(t_env *env, t_grid *grid);
 void				init_ncurses(t_env *env);
-void				leftkey(t_env * env, t_grid * grid);
+void				leftkey(t_env *env, t_grid *grid);
 void				add_rand_num(t_env *env, t_grid *grid, int num);
 int					main_loop(t_env *env, t_grid *grid);
 void				left_shift(t_env *env, t_grid *grid);
