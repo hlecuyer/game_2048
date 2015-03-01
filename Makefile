@@ -6,7 +6,7 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 16:12:12 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/03/01 14:04:56 by fmarmol          ###   ########.fr        #
+#    Updated: 2015/03/01 15:28:06 by hlecuyer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRC=command.c \
 	fusion.c \
 	menu.c \
 	check_win.c \
-	free_struct.c
+	free_struct.c \
+	arrow_command.c \
+	next_turn.c
 
 OBJ=$(SRC:.c=.o)
 

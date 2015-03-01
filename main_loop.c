@@ -6,15 +6,13 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:39:16 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 13:40:03 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 15:36:42 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <game_2048.h>
 
-extern int fd;
-
-static void refresh_windows(t_env * env, t_grid * grid){
+void	refresh_windows(t_env * env, t_grid * grid){
 	int		i;
 	int		j;
 	int		x;
@@ -22,7 +20,6 @@ static void refresh_windows(t_env * env, t_grid * grid){
 	int width;
 	int height;
 	WINDOW	*win;
-
 
 	width = env->tcols/env->ncols;
 	height = env->trows/env->nrows;
@@ -46,65 +43,27 @@ static void refresh_windows(t_env * env, t_grid * grid){
 	}
 }
 
-int main_loop(t_env *env, t_grid *grid)
+int		main_loop(t_env *env, t_grid *grid)
 {
 	int ch;
-	int x;
-	int y;
 
 	while((ch=getch()) != 27)
 	{
 		if (check_win(env, grid))
 			return (1);
-		switch(ch)
-		{
-		case KEY_LEFT:
-			left_shift(env, grid);
-			left_fusion(env,grid);
-			if (env->left_flag == 0)
-			{
-				env->left_flag = -1;
-			}
-			break;
-		case KEY_RIGHT:
-			right_shift(env,grid);
-			right_fusion(env,grid);
-			if (env->right_flag == 0)
-			{
-				env->right_flag = -1;
-			}
-			break;
-		case KEY_UP:
-			top_shift(env,grid);
-			top_fusion(env,grid);
-			if (env->top_flag == 0)
-			{
-				env->top_flag = -1;
-			}
-			break;
-		case KEY_DOWN:
-			bottom_shift(env,grid);
-			bottom_fusion(env,grid);
-			if (env->bottom_flag == 0)
-			{
-				env->bottom_flag = -1;
-			}
-			break;
-		}
-		if (env->left_flag == 1 || env->right_flag == 1 || env->top_flag == 1 || env->bottom_flag == 1){
-			add_rand_num(env, grid, rand()%2);
-			env->left_flag = 0;
-			env->right_flag = 0;
-			env->top_flag = 0;
-			env->bottom_flag = 0;
-		}
-		if (env->left_flag == -1 && env->right_flag == -1 && env->top_flag == -1  && env->bottom_flag == -1)
+		if (ch == KEY_LEFT)
+			key_left(env, grid);
+		if (ch == KEY_RIGHT)
+			key_right(env, grid);
+		if (ch == KEY_UP)
+			key_up(env, grid);
+		if (ch == KEY_DOWN)
+			key_down(env, grid);
+		next_turn(env, grid);
+		if (env->left_flag == -1 && env->right_flag == -1
+			&& env->top_flag == -1  && env->bottom_flag == -1)
 			return (-1);
-		getmaxyx(env->win, y, x);
-		env->trows = y;
-		env->tcols = x;
-		refresh_windows(env, grid);
-		wrefresh(env->win);
+		reset_win(env, grid);
 	}
 	return (0);
 }

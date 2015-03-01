@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 14:04:34 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 15:26:43 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ typedef struct		s_env
 	int				bottom_flag;
 }					t_env;
 
-t_grid *			init_grid(t_env *env, t_grid *grid);
+t_grid				*init_grid(t_env *env, t_grid *grid);
 void				start_game(t_env *env, t_grid *grid);
 void				init_ncurses(t_env *env);
-void				leftkey(t_env * env, t_grid * grid);
+void				leftkey(t_env *env, t_grid *grid);
 void				add_rand_num(t_env *env, t_grid *grid, int num);
 int					main_loop(t_env *env, t_grid *grid);
 void				left_shift(t_env *env, t_grid *grid);
@@ -67,4 +67,12 @@ void				bottom_fusion(t_env *env, t_grid *grid);
 int					menu(t_env *env);
 int					check_win(t_env *env, t_grid *grid);
 void				free_struct(t_env *env, t_grid *grid);
+void				reset_win(t_env *env, t_grid *grid);
+void				next_turn(t_env *env, t_grid *grid);
+void				key_left(t_env *env, t_grid *grid);
+void				key_right(t_env *env, t_grid *grid);
+void				key_up(t_env *env, t_grid *grid);
+void				key_down(t_env *env, t_grid *grid);
+void				refresh_windows(t_env * env, t_grid * grid);
+
 #endif
