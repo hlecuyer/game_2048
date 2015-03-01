@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 11:02:17 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:58:50 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,15 @@ int main()
 	srand(time(0));
 	init_ncurses(&env);
 	init_grid(&env, &grid);
-	main_loop(&env, &grid);
-	endwin();
+	if (main_loop(&env, &grid) == 1)
+	{
+		endwin();
+		ft_putendl("You win!!!");
+	}
+	else
+	{
+		endwin();
+		ft_putendl("You looser!!!");
+	}
 	return 0;
 }

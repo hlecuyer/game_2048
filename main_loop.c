@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:39:16 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 11:40:59 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:55:36 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void refresh_windows(t_env * env, t_grid * grid){
 	}
 }
 
-void main_loop(t_env *env, t_grid *grid)
+int main_loop(t_env *env, t_grid *grid)
 {
 	int ch;
 	int x;
@@ -54,6 +54,8 @@ void main_loop(t_env *env, t_grid *grid)
 
 	while((ch=getch()) != 27)
 	{
+		if (check_win(env, grid))
+			return (1);
 		switch(ch)
 		{
 		case KEY_LEFT:
@@ -102,11 +104,12 @@ void main_loop(t_env *env, t_grid *grid)
 			env->bottom_flag = 0;
 		}
 		if (env->left_flag == -1 && env->right_flag == -1 && env->top_flag == -1  && env->bottom_flag == -1)
-			break;
+			return (-1);
 		getmaxyx(env->win, y, x);
 		env->trows = y;
 		env->tcols = x;
 		refresh_windows(env, grid);
 		wrefresh(env->win);
 	}
+	return (0);
 }

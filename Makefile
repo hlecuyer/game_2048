@@ -6,14 +6,13 @@
 #    By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 16:12:12 by hlecuyer          #+#    #+#              #
-#    Updated: 2015/02/28 16:29:56 by fmarmol          ###   ########.fr        #
+#    Updated: 2015/03/01 12:56:04 by hlecuyer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=game_2048
 VERSION=1.1.0
-#CFLAGS=-Wall -Werror -Wextra -g
-#CFLAGS=-Wall -Werror -Wextra -g
+CFLAGS=-Wall -Werror -Wextra -g
 INCLUDES=-I ./includes -I ./libft/includes
 LIBS=-L ./libft -l ft -lncurses
 
@@ -23,7 +22,8 @@ SRC=command.c \
 	init_ncurses.c \
 	main.c \
 	main_loop.c \
-	fusion.c
+	fusion.c \
+	check_win.c
 
 OBJ=$(SRC:.c=.o)
 

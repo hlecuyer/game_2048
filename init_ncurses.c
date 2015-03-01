@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 11:03:37 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 11:45:40 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 12:57:18 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void init_ncurses(t_env * env)
 	getmaxyx(stdscr, y, x);
 	env->trows=y;
 	env->tcols=x;
-	env->nrows=10;
-	env->ncols=10;
+	env->nrows=2;
+	env->ncols=2;
 	env->left_flag = 0;
 	env->right_flag = 0;
 	env->top_flag = 0;
