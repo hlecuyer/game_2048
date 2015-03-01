@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_win.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 13:15:38 by fmarmol          ###   ########.fr       */
+/*   Created: 2015/03/01 12:45:06 by hlecuyer          #+#    #+#             */
+/*   Updated: 2015/03/01 13:20:09 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "game_2048.h"
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-#include <sys/stat.h> 
-#include <fcntl.h>
 
-int fd;
-
-int main()
+int		check_win(t_env *env, t_grid *grid)
 {
-	fd = open("./error_log",O_WRONLY|O_CREAT, 0666);
-	t_grid	grid;
-	t_env	env;
-	srand(time(0));
-	init_ncurses(&env);
-	if (menu(&env))
+	int	x;
+	int	y;
+
+	x = 0;
+	while (x < env->nrows)
 	{
-		init_grid(&env, &grid);
-		if (main_loop(&env, &grid) == 1)
+		y = 0;
+		while (y < env->ncols)
 		{
-			endwin();
-			ft_putendl("You win!!!");
+			if (grid->grid[x][y].value == WIN_VALUE)
+				return (1);
+			y++;
 		}
-		else
-		{
-			endwin();
-			ft_putendl("You loose!!!");
-		}
+		x++;
 	}
-	return 0;
+	return (0);
 }
