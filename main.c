@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 13:15:38 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 14:06:15 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ int main()
 		if (main_loop(&env, &grid) == 1)
 		{
 			endwin();
+			free_struct(&env, &grid);
 			ft_putendl("You win!!!");
 		}
 		else
 		{
 			endwin();
+			free_struct(&env, &grid);
 			ft_putendl("You loose!!!");
 		}
 	}

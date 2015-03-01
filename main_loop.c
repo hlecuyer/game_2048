@@ -6,7 +6,7 @@
 /*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:39:16 by fmarmol           #+#    #+#             */
-/*   Updated: 2015/03/01 13:17:19 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:40:03 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void refresh_windows(t_env * env, t_grid * grid){
 				delwin((grid->grid[i][j]).win);
 			win = newwin(height, width, i*height, j*width);
 			(grid->grid[i][j]).win = win;
-			wbkgd(win, COLOR_PAIR(grid->grid[i][j].value + 1));
+			wbkgd(win, COLOR_PAIR((grid->grid[i][j].value + 1) % 126));
 			getmaxyx(win, y, x);
 			mvwprintw(win, y/2, x/2, (const char *)ft_itoa(grid->grid[i][j].value));
 			wrefresh(win);

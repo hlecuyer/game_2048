@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 13:18:11 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 14:04:34 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void				bottom_shift(t_env *env, t_grid *grid);
 void				bottom_fusion(t_env *env, t_grid *grid);
 int					menu(t_env *env);
 int					check_win(t_env *env, t_grid *grid);
-
+void				free_struct(t_env *env, t_grid *grid);
 #endif

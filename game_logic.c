@@ -6,13 +6,14 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 11:36:34 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 16:41:04 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 13:51:07 by hlecuyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "game_2048.h"
 
+int fd;
 void	check_empty_spot(t_env *env, t_grid *grid)
 {
 	int	i;
@@ -21,9 +22,11 @@ void	check_empty_spot(t_env *env, t_grid *grid)
 	i = 0;
 	y = 0;
 	ft_bzero(grid->free_spot, sizeof(int) * env->ncols * env->nrows);
+	ft_putendl_fd("ok ici", fd);
 	while (i < (env->ncols * env->nrows))
 	{
-		if (grid->grid[i / env->nrows][i % env->ncols].value == 0)
+		ft_putendl_fd(ft_itoa(i), fd);
+		if (grid->grid[i / env->ncols][i % env->ncols].value == 0)
 		{
 			grid->free_spot[y] = i;
 			y++;
@@ -31,6 +34,7 @@ void	check_empty_spot(t_env *env, t_grid *grid)
 		i++;
 	}
 	grid->number_of_free_spot = y;
+	ft_putendl_fd("ok la", fd);
 }
 
 void	add_rand_num(t_env *env, t_grid *grid, int num)
@@ -44,9 +48,9 @@ void	add_rand_num(t_env *env, t_grid *grid, int num)
 	pos = rand() % grid->number_of_free_spot;
 	pos = grid->free_spot[pos];
 	if (!num)
-		grid->grid[pos / env->nrows][pos % env->ncols].value = 2;
+		grid->grid[pos / env->ncols][pos % env->ncols].value = 2;
 	else
-		grid->grid[pos / env->nrows][pos % env->ncols].value = 4;
+		grid->grid[pos / env->ncols][pos % env->ncols].value = 4;
 }
 
 

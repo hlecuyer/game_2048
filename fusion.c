@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fusion.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fmarmol <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/01 13:55:15 by fmarmol           #+#    #+#             */
+/*   Updated: 2015/03/01 13:59:34 by fmarmol          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <game_2048.h>
 
 void left_fusion(t_env *env, t_grid *grid)
 {
 	int x;
 	int y;
-	
+
 	x = 0;
 	while (x < env->nrows)
 	{
@@ -20,14 +32,14 @@ void left_fusion(t_env *env, t_grid *grid)
 		}
 		x++;
 	}
-	left_shift(env,grid);
+	left_shift(env, grid);
 }
 
 void right_fusion(t_env *env, t_grid *grid)
 {
 	int x;
 	int y;
-	
+
 	x = 0;
 	while (x < env->nrows)
 	{
@@ -43,19 +55,19 @@ void right_fusion(t_env *env, t_grid *grid)
 		}
 		x++;
 	}
-	right_shift(env,grid);
+	right_shift(env, grid);
 }
 
 void top_fusion(t_env *env, t_grid *grid)
 {
 	int x;
 	int y;
-	
+
 	y = 0;
 	while (y < env->ncols)
 	{
 		x = 0;
-		while (x < env->nrows-1)
+		while (x < env->nrows - 1)
 		{
 			if (grid->grid[x][y].value == grid->grid[x + 1][y].value)
 			{
@@ -66,18 +78,18 @@ void top_fusion(t_env *env, t_grid *grid)
 		}
 		y++;
 	}
-	top_shift(env,grid);
+	top_shift(env, grid);
 }
 
 void bottom_fusion(t_env *env, t_grid *grid)
 {
 	int x;
 	int y;
-	
+
 	y = 0;
 	while (y < env->ncols)
 	{
-		x = env->nrows-1;
+		x = env->nrows - 1;
 		while (x > 0)
 		{
 			if (grid->grid[x][y].value == grid->grid[x - 1][y].value)
@@ -89,5 +101,5 @@ void bottom_fusion(t_env *env, t_grid *grid)
 		}
 		y++;
 	}
-	bottom_shift(env,grid);
+	bottom_shift(env, grid);
 }
