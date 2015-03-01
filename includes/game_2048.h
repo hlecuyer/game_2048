@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 15:12:41 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 15:41:54 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,12 @@ void				bottom_fusion(t_env *env, t_grid *grid);
 int					menu(t_env *env);
 int					check_win(t_env *env, t_grid *grid);
 void				free_struct(t_env *env, t_grid *grid);
+void				reset_win(t_env *env, t_grid *grid);
+void				next_turn(t_env *env, t_grid *grid);
+void				key_left(t_env *env, t_grid *grid);
+void				key_right(t_env *env, t_grid *grid);
+void				key_up(t_env *env, t_grid *grid);
+void				key_down(t_env *env, t_grid *grid);
+void				refresh_windows(t_env * env, t_grid * grid);
+
 #endif
