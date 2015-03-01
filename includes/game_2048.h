@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 15:01:11 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 15:12:41 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 enum				e_const
 {
-	WIN_VALUE = 16
+	WIN_VALUE = 2048
 };
 
 typedef struct		s_elem
