@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 15:00:12 by hlecuyer         ###   ########.fr       */
+/*   Updated: 2015/03/01 10:46:23 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct		s_grid
 	t_elem			**grid;
 	int				*free_spot;
 	int				number_of_free_spot;
-	int				move;
+	//int				move;
 }					t_grid;
 
 typedef struct		s_env
@@ -40,6 +40,10 @@ typedef struct		s_env
 	int				trows;
 	int				tcols;
 	WINDOW			*win;
+	int				left_flag;
+	int				right_flag;
+	int				top_flag;
+	int				bottom_flag;
 }					t_env;
 
 t_grid *        init_grid(t_env *env, t_grid *grid);

@@ -6,24 +6,11 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 13:49:09 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 16:48:58 by hlecuyer         ###   ########.fr       */
+/*   Updated: 2015/03/01 11:37:49 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_2048.h"
-
-
-int			check_end(t_env *env, t_elem *e, int pos)
-{
-	while (pos < env->ncols)
-	{
-		if (e[pos].value == 0)
-			pos++;
-		else
-			return (0);
-	}
-	return (1);
-}
 
 void		left_shift(t_env *env, t_grid *grid)
 {
@@ -34,8 +21,8 @@ void		left_shift(t_env *env, t_grid *grid)
 	x = 0;
 	while (x < env->nrows)
 	{
-		i = env->ncols;
-		while (i != 0)
+		i = env->ncols + 1;
+		while (i-- != 0)
 		{
 			y = 0;
 			while (y < env->ncols - 1)
@@ -43,11 +30,12 @@ void		left_shift(t_env *env, t_grid *grid)
 				if (grid->grid[x][y].value == 0)
 				{
 					grid->grid[x][y].value = grid->grid[x][y + 1].value;
+					env->left_flag = env->left_flag > 0
+					|| grid->grid[x][y].value > 0 ? 1 : 0;
 					grid->grid[x][y + 1].value = 0;
 				}
 				y++;
 			}
-			i--;
 		}
 		x++;
 	}
@@ -62,20 +50,21 @@ void		right_shift(t_env *env, t_grid *grid)
 	x = 0;
 	while (x < env->nrows)
 	{
-		i = env->ncols;
-		while (i != 0)
+		i = env->ncols + 1;
+		while (i-- != 0)
 		{
-			y = env->ncols-1;
+			y = env->ncols - 1;
 			while (y > 0)
 			{
 				if (grid->grid[x][y].value == 0)
 				{
 					grid->grid[x][y].value = grid->grid[x][y - 1].value;
+					env->right_flag = env->right_flag > 0
+					|| grid->grid[x][y].value > 0 ? 1 : 0;
 					grid->grid[x][y - 1].value = 0;
 				}
 				y--;
 			}
-			i--;
 		}
 		x++;
 	}
@@ -90,20 +79,21 @@ void		top_shift(t_env *env, t_grid *grid)
 	y = 0;
 	while (y < env->ncols)
 	{
-		i = env->nrows;
-		while (i != 0)
+		i = env->nrows + 1;
+		while (i-- != 0)
 		{
 			x = 0;
-			while (x < env->nrows-1)
+			while (x < env->nrows - 1)
 			{
 				if (grid->grid[x][y].value == 0)
 				{
 					grid->grid[x][y].value = grid->grid[x + 1][y].value;
+					env->top_flag = env->top_flag > 0
+					|| grid->grid[x][y].value > 0 ? 1 : 0;
 					grid->grid[x + 1][y].value = 0;
 				}
 				x++;
 			}
-			i--;
 		}
 		y++;
 	}
@@ -118,8 +108,8 @@ void		bottom_shift(t_env *env, t_grid *grid)
 	y = 0;
 	while (y < env->ncols)
 	{
-		i = env->nrows;
-		while (i != 0)
+		i = env->nrows + 1;
+		while (i-- != 0)
 		{
 			x = env->nrows - 1;
 			while (x > 0)
@@ -127,57 +117,13 @@ void		bottom_shift(t_env *env, t_grid *grid)
 				if (grid->grid[x][y].value == 0)
 				{
 					grid->grid[x][y].value = grid->grid[x - 1][y].value;
+					env->bottom_flag = env->bottom_flag > 0
+					|| grid->grid[x][y].value > 0 ? 1 : 0;
 					grid->grid[x - 1][y].value = 0;
 				}
 				x--;
 			}
-			i--;
 		}
 		y++;
 	}
 }
-// void		leftscreen(t_env *env, t_elem  *e)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < env->ncols - 1)
-// 	{
-// 		if (e[i].value == 0 && !check_end(env, e, i))
-// 			left_shift(env, e);
-// 		i++;
-// 	}
-// }
-
-
-// void		leftfusion(t_env *env, t_elem  *e)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < env->ncols - 1)
-// 	{
-// 		if (e[i].value != 0 && e[i].value ==  e[i + 1].value)
-// 		{
-// 			e[i].value = e[i].value + e[i + 1].value;
-// 			e[i + 1].value = 0;
-// 			if (i + 1  != env->ncols)
-// 				left_shift(env, e);
-// 		}
-// 		i++;
-// 	}
-// }
-
-// void		leftkey(t_env * env, t_grid * grid)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	grid->move = KEY_LEFT;
-// 	while (i < env->nrows)
-// 	{
-// //		leftscreen(env, grid->grid[i]);
-// //		leftfusion(env, grid->grid[i]);
-// 		i++;
-// 	}
-// }

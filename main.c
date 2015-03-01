@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 09:35:55 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/02/28 16:26:11 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 11:02:17 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 #include <sys/stat.h> 
 #include <fcntl.h>
 
+int fd;
+
 int main()
 {
-	int fd;
-
 	fd = open("./error_log",O_WRONLY|O_CREAT, 0666);
 	t_grid	grid;
 	t_env	env;
