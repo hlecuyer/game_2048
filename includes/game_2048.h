@@ -6,7 +6,7 @@
 /*   By: hlecuyer <hlecuyer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 10:03:22 by hlecuyer          #+#    #+#             */
-/*   Updated: 2015/03/01 15:41:54 by fmarmol          ###   ########.fr       */
+/*   Updated: 2015/03/01 16:00:39 by fmarmol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 enum				e_const
 {
-	WIN_VALUE = 2048
+	WIN_VALUE = 32
 };
 
 typedef struct		s_elem
@@ -73,6 +73,6 @@ void				key_left(t_env *env, t_grid *grid);
 void				key_right(t_env *env, t_grid *grid);
 void				key_up(t_env *env, t_grid *grid);
 void				key_down(t_env *env, t_grid *grid);
-void				refresh_windows(t_env * env, t_grid * grid);
+void				refresh_windows(t_env *env, t_grid *grid);
 
 #endif
